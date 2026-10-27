@@ -1,0 +1,46 @@
+; Engine configuration file.
+; 孤岛求生 · 纵向切片（Milestone B/C/D 初版）
+; 目标引擎：Godot 4.3.stable（Compatibility 渲染器，对应 GDD 3.1「Godot 4 Compatibility」）
+; 平台规格：Windows PC、键鼠、离线单机；窗口 1920x1080 / 1600x900，可缩放（GDD 3.1、10.1）。
+; @trace PLAT-001
+
+config_version=5
+
+[application]
+
+config/name="孤岛求生"
+config/description="单人硬核生存纵向切片：采集、制作、建造、战斗、死亡回收、火台胜利"
+run/main_scene="res://scenes/main/main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/show_image=false
+
+[autoload]
+
+Game="*res://scripts/autoload/game.gd"
+GameConfig="*res://scripts/autoload/game_config.gd"
+InputSetup="*res://scripts/autoload/input_setup.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1600
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom="res://resources/ui_theme.tres"
+
+[physics]
+
+common/physics_ticks_per_second=60
+3d/default_gravity=18.0
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=false
+anti_aliasing/quality/msaa_3d=1

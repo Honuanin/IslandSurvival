@@ -1,0 +1,423 @@
+Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+SMOKE_RESULT_BEGIN
+{
+  "checks": [
+    {
+      "detail": "menu visible",
+      "name": "主菜单显示",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "会话建立",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "玩家存在",
+      "ok": true
+    },
+    {
+      "detail": "count=111",
+      "name": "资源节点已生成",
+      "ok": true
+    },
+    {
+      "detail": "count=10",
+      "name": "敌人已生成",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "HUD 可见",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "存在树木节点",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "存在碎石节点",
+      "ok": true
+    },
+    {
+      "detail": "需要石斧",
+      "name": "无斧无法采树",
+      "ok": true
+    },
+    {
+      "detail": "{ \"ok\": true, \"item\": \"stone\", \"amount\": 1, \"depleted\": false }",
+      "name": "徒手可采碎石",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "采集产出石头",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "配方材料充足",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "制作扣料成功",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "获得石斧并装备",
+      "ok": true
+    },
+    {
+      "detail": "{ \"ok\": true, \"item\": \"wood\", \"amount\": 1, \"depleted\": false }",
+      "name": "有斧可采树",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "采集木材增加",
+      "ok": true
+    },
+    {
+      "detail": "出生保护区禁建",
+      "name": "出生保护区禁建",
+      "ok": true
+    },
+    {
+      "detail": "超出可建范围",
+      "name": "水面禁建",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "非法建造不扣料",
+      "ok": true
+    },
+    {
+      "detail": "可建造",
+      "name": "合法位置可建造",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "建筑生成并点燃",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "营火供热生效",
+      "ok": true
+    },
+    {
+      "detail": "{ \"wood\": 2, \"stone\": 2 }",
+      "name": "拆除返还 50% 向下取整",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "拆除不增产",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "工作台主线完成",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "工作台旁边可升级（条件检查）",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "升级矛 Lv2",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "满级重复升级被拒绝",
+      "ok": true
+    },
+    {
+      "detail": "before=20 mid=16",
+      "name": "拒绝时不扣料",
+      "ok": true
+    },
+    {
+      "detail": "21",
+      "name": "伤害公式 矛Lv2 对守卫",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "伤害公式 斧Lv1 对守卫",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "伤害公式 重击上限 矛Lv2",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "守卫存在",
+      "ok": true
+    },
+    {
+      "detail": "dmg=21",
+      "name": "守卫 25% 减伤生效",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "守卫扣血正确",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "守卫可被击杀",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "守卫死亡计数",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "守卫主线完成",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "守卫掉落徽记",
+      "ok": true
+    },
+    {
+      "detail": "5",
+      "name": "死亡进入 DEAD 流程",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "死亡掉落非任务物品",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "任务物品保留",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "尸体存在",
+      "ok": true
+    },
+    {
+      "detail": "{ \"stone\": 18, \"wood\": 23, \"fiber\": 16, \"metal\": 8, \"scrap\": 16, \"hide\": 3, \"axe_l1\": 1, \"spear_l2\": 1 }",
+      "name": "尸体含掉落",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "复活回到 PLAYING",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "复活后生命 50",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "复活清除流血骨折",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "尸体回收木材",
+      "ok": true
+    },
+    {
+      "detail": "corpses=1",
+      "name": "二次死亡只保留最新尸体",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "存档可读取",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "存档含版本号",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "存档含玩家数据",
+      "ok": true
+    },
+    {
+      "detail": "12",
+      "name": "存档背包格数 12",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "存档含建筑",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "存档含资源节点",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "继续游戏成功",
+      "ok": true
+    },
+    {
+      "detail": "workbench=1",
+      "name": "读档恢复建筑",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "读档恢复主线",
+      "ok": true
+    },
+    {
+      "detail": "6",
+      "name": "点火台进入胜利流程",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "火台已点燃",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "胜利结算可见",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "背包不暂停世界",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "Esc 暂停世界",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "恢复后不暂停",
+      "ok": true
+    }
+  ],
+  "failures": 0,
+  "ok": true
+}
+SMOKE_RESULT_END
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:120)
+ERROR: Pages in use exist at exit in PagedAllocator: N20RasterizerSceneDummy21GeometryInstanceDummyE
+   at: ~PagedAllocator (./core/templates/paged_allocator.h:170)
+ERROR: 20 RID allocations of type 'N13RendererDummy11MeshStorage9DummyMeshE' were leaked at exit.
+ERROR: 1 RID allocations of type 'N13RendererDummy15MaterialStorage11DummyShaderE' were leaked at exit.
+ERROR: 20 RID allocations of type 'N17RendererSceneCull8InstanceE' were leaked at exit.
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+     at: cleanup (core/object/object.cpp:2284)

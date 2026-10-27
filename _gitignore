@@ -1,0 +1,22 @@
+# Godot 4 生成的编辑器缓存 / 导入产物
+.godot/
+*.translation
+
+# 导出产物（体积大，走 Release 分发，不进版本库）
+export/
+build/
+
+# Godot 导出的调试日志
+*.log
+!reports/*.log
+
+# 操作系统与编辑器杂项
+.DS_Store
+Thumbs.db
+*.swp
+.vs/
+.vscode/
+.idea/
+
+# 本地存档（运行时生成）
+user://

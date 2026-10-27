@@ -1,0 +1,39 @@
+{
+  "project": "/workspace/island-survival",
+  "spec": {
+    "requiredDirs": [
+      "scenes",
+      "scripts",
+      "assets",
+      "resources",
+      "tests",
+      "docs"
+    ],
+    "recommendedDirs": [
+      "reports",
+      "export"
+    ],
+    "requiredFiles": [
+      "project.godot",
+      "scenes/main/main.tscn",
+      "docs/gdd.md",
+      "docs/design-freeze.json"
+    ],
+    "requireImportMeta": true,
+    "scanAbsolutePaths": true,
+    "scanDanglingRefs": true,
+    "refAllowlist": [],
+    "requireFrozenDesign": true,
+    "traceMarker": "@trace"
+  },
+  "ok": true,
+  "problemCount": 0,
+  "warningCount": 0,
+  "problems": [],
+  "warnings": [],
+  "traceCoverage": true,
+  "parse": {
+    "checked": false,
+    "detail": "由 godot --headless --check-only 单独执行"
+  }
+}

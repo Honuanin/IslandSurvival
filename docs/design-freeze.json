@@ -1,0 +1,441 @@
+{
+  "version": 1,
+  "status": "draft",
+  "frozenAt": "",
+  "project": "孤岛求生",
+  "sourceDoc": "孤岛求生-完整策划案-v0.9.md",
+  "sourceSection": "附录 A 需求验收矩阵 / 附录 B 本轮待确认项",
+  "traceMarker": "@trace",
+  "summary": {
+    "total": 27,
+    "confirmedByHuman": 0,
+    "implemented": 25,
+    "validated": 1,
+    "partial": 1,
+    "notStarted": 0,
+    "traceCoverage": "27/27 需求在源码中有 @trace 标记"
+  },
+  "notes": [
+    "本文件的 confirmed 字段一律保持 false：设计冻结属于需求方决策，工程实现不代替签字。",
+    "implementation=implemented 表示代码已实现并有自动化测试或截图证据；validated 表示额外通过数值表逐行核对；partial 表示部分完成。",
+    "验证环境：Godot 4.3.stable.official.77dcf97d8，Linux 无头 + llvmpipe 软件渲染截图；Windows 实机未验证。",
+    "附录 B 的 6 项待确认内容（范围、内容上限、死亡规则、暂停规则、固定产出、数值初值）仍待人工答复。"
+  ],
+  "items": [
+    {
+      "id": "PLAT-001",
+      "type": "platform",
+      "name": "Windows PC、键鼠、离线与分辨率规格",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "project.godot"
+      ],
+      "evidence": "项目声明 4.3/GL Compatibility，窗口 1920x1080 + 1600x900 自适应；键鼠、离线单机。",
+      "verification": "Windows 导出包已生成；Windows 实机性能与兼容性待验证。",
+      "caveat": "分辨率切换未单独截图验证。"
+    },
+    {
+      "id": "MECH-001",
+      "type": "mechanic",
+      "name": "三层核心循环与完整结局",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/main/game_session.gd",
+        "scripts/autoload/game.gd",
+        "tests/smoke_runner.gd"
+      ],
+      "evidence": "新游戏→采集/制作→建造→战斗→死亡回收→读档→点火胜利全链路冒烟通过。",
+      "verification": "smoke_runner 断言覆盖。",
+      "caveat": ""
+    },
+    {
+      "id": "MECH-002",
+      "type": "mechanic",
+      "name": "移动、固定相机与交互",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/player/player.gd"
+      ],
+      "evidence": "CharacterBody3D 移动/冲刺/闪避；固定斜角相机跟随；交互目标评分与 0.15s 防抖。",
+      "verification": "冒烟测试与截图（4 区域可站立、不穿地）。",
+      "caveat": "相机不随鼠标旋转，符合 GDD 固定斜视角。"
+    },
+    {
+      "id": "MECH-003",
+      "type": "mechanic",
+      "name": "生存状态、温度与伤病",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/player/survival_stats.gd",
+        "scripts/player/player.gd"
+      ],
+      "evidence": "饥渴/体温/流血/骨折/体力；体温一阶滞后公式与保温加成。",
+      "verification": "冒烟测试数值边界断言。",
+      "caveat": ""
+    },
+    {
+      "id": "MECH-004",
+      "type": "mechanic",
+      "name": "采集、背包与制作",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/player/inventory.gd",
+        "scripts/world/resource_node.gd",
+        "scripts/world/ground_item.gd",
+        "scripts/ui/inventory_panel.gd"
+      ],
+      "evidence": "12 格背包 + 3 装备槽 + 任务栏；工具等级门槛；事务式制作；满包拒绝。",
+      "verification": "冒烟测试：无斧不可采树、制作扣料、满级拒绝不扣料。",
+      "caveat": ""
+    },
+    {
+      "id": "MECH-005",
+      "type": "mechanic",
+      "name": "建造与工具升级",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/buildings/build_controller.gd",
+        "scripts/buildings/building.gd",
+        "scripts/ui/build_panel.gd"
+      ],
+      "evidence": "4 建筑；坡度/间距/禁区/数量/材料/重叠校验；拆除返还 50%；火台限信号点。",
+      "verification": "冒烟测试：非法建造不扣料、拆除返还 50%。",
+      "caveat": ""
+    },
+    {
+      "id": "MECH-006",
+      "type": "mechanic",
+      "name": "玩家战斗、体力与闪避",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/player/player.gd",
+        "scripts/enemy/enemy.gd",
+        "tests/combat_runner.gd"
+      ],
+      "evidence": "前摇-命中窗-后摇；单动作命中去重（_attack_hit_targets）；闪避无敌仅作用于敌方攻击；体力门槛。",
+      "verification": "combat_runner 断言：伤害公式、连击倍率、伤害去重（击杀计数）。",
+      "caveat": ""
+    },
+    {
+      "id": "MECH-007",
+      "type": "mechanic",
+      "name": "普通敌人与遗迹守卫",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/enemy/enemy.gd",
+        "scripts/autoload/game_config.gd",
+        "tests/combat_runner.gd"
+      ],
+      "evidence": "野猪直线冲撞、狼环绕突袭、守卫横扫/重击交替；脱战回血 25%；掉落表。",
+      "verification": "combat_runner：FSM 状态占比、守卫命中、脱战回血、击杀掉落链路。",
+      "caveat": ""
+    },
+    {
+      "id": "MECH-008",
+      "type": "mechanic",
+      "name": "死亡、尸体回收与防软锁",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/world/ground_item.gd",
+        "scripts/player/player.gd",
+        "scripts/ui/death_panel.gd"
+      ],
+      "evidence": "死亡掉落非任务物品到尸体；复活回安全点；二次死亡删除旧尸体；任务物品保留。",
+      "verification": "冒烟测试：掉落、任务物品保留、二次死亡清理。",
+      "caveat": ""
+    },
+    {
+      "id": "MECH-009",
+      "type": "mechanic",
+      "name": "开放区域主线与任务物品",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/autoload/game.gd",
+        "scripts/buildings/building.gd",
+        "scripts/world/island.gd"
+      ],
+      "evidence": "主线 5 步可自由排序；区域物品固定产出；拾取与点火自动推进目标。",
+      "verification": "冒烟测试：主线推进与读档一致。",
+      "caveat": ""
+    },
+    {
+      "id": "MECH-010",
+      "type": "mechanic",
+      "name": "菜单与世界暂停规则",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/main/game_session.gd",
+        "scripts/ui/pause_panel.gd"
+      ],
+      "evidence": "背包与建造不暂停世界；Esc 暂停并锁输入；暂停菜单可存档/回主菜单。",
+      "verification": "冒烟测试：背包不暂停、Esc 暂停。",
+      "caveat": ""
+    },
+    {
+      "id": "NUM-001",
+      "type": "numeric",
+      "name": "饥渴消耗与持续伤害",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/autoload/game_config.gd",
+        "scripts/player/survival_stats.gd"
+      ],
+      "evidence": "饥饿 0.0370/s、口渴 0.0556/s；耗尽后 0.3/0.6 每秒伤害。",
+      "verification": "冒烟测试边界断言。",
+      "caveat": "长时耗尽曲线未做 10 分钟实跑。"
+    },
+    {
+      "id": "NUM-002",
+      "type": "numeric",
+      "name": "体温、湿润与移动公式",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/autoload/game_config.gd",
+        "scripts/player/survival_stats.gd"
+      ],
+      "evidence": "体温舒适区 35–38.5℃、衣物 +0.3、营火 +2.0、庇护所 +0.4、一阶滞后 tau=90。",
+      "verification": "冒烟测试公式与钳制断言。",
+      "caveat": ""
+    },
+    {
+      "id": "NUM-003",
+      "type": "numeric",
+      "name": "伤害、工具成长与战斗时长",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "validated",
+      "files": [
+        "scripts/autoload/game_config.gd",
+        "scripts/enemy/enemy.gd",
+        "tests/combat_runner.gd"
+      ],
+      "evidence": "Damage = max(1, round(Base × Move × (1-Resistance)))；TTK 表与 GDD 8.4 逐行一致。",
+      "verification": "combat_runner 自动核对 TTK 全表（野猪 4/3、狼 5/3、守卫 20/14 命中）。",
+      "caveat": ""
+    },
+    {
+      "id": "NUM-004",
+      "type": "numeric",
+      "name": "体力、流血与骨折数值",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/player/survival_stats.gd",
+        "tests/combat_runner.gd"
+      ],
+      "evidence": "攻击 15 / 闪避 25 体力、恢复 15/s；流血最多 2 层、0.25 dps；骨折禁闪避。",
+      "verification": "冒烟 + 战斗测试断言。",
+      "caveat": ""
+    },
+    {
+      "id": "NUM-005",
+      "type": "numeric",
+      "name": "资源产出、复活与建造经济",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/autoload/game_config.gd",
+        "scripts/world/resource_node.gd"
+      ],
+      "evidence": "普通资源 420–600 秒复活；金属/废料箱/任务物品不复活；拆除返还 50%。",
+      "verification": "冒烟测试扣料/返还断言。",
+      "caveat": "全岛废料 20 与消耗 16 的比值 1.25 未做全流程消耗跑测。"
+    },
+    {
+      "id": "NUM-006",
+      "type": "numeric",
+      "name": "平衡测试与数值调整流程",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "partial",
+      "files": [
+        "tests/combat_runner.gd"
+      ],
+      "evidence": "平衡测试脚本已可执行：机制断言 + 非断言的 balance 观察段。",
+      "verification": "已产出徒手 vs 满级矛对照数据。",
+      "caveat": "GDD 要求 3 条路线真人试玩记录，尚未进行——不得称「已平衡」。"
+    },
+    {
+      "id": "LEV-001",
+      "type": "level",
+      "name": "四区域连续开放岛屿",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/world/island_terrain.gd",
+        "scripts/world/island.gd"
+      ],
+      "evidence": "四区域连续岛（海滩/森林/岩地/湿地），顶点色地形、海面、地标、喘息点。",
+      "verification": "8 张截图确认区域色板可辨（海滩 #F1DA95、森林 #558A4A、岩地 #7E8483、湿地 #4B6C56）。",
+      "caveat": ""
+    },
+    {
+      "id": "LEV-002",
+      "type": "level",
+      "name": "资源保底、遭遇与风险梯度",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/world/island.gd",
+        "scripts/world/island_terrain.gd"
+      ],
+      "evidence": "111 个资源节点、10 个敌人（含守卫）、湿地透镜宝箱、出生点保底。",
+      "verification": "冒烟测试节点数量断言（>90 节点、10 敌人）。",
+      "caveat": ""
+    },
+    {
+      "id": "UI-001",
+      "type": "ui",
+      "name": "中文界面与逻辑输入",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/ui/hud.gd",
+        "scripts/autoload/input_setup.gd",
+        "scripts/main/game_session.gd"
+      ],
+      "evidence": "7 个界面（主菜单/HUD/背包/建造/暂停/死亡/胜利）；InputMap 运行时注册；中文字体内嵌。",
+      "verification": "截图确认中文渲染正常。",
+      "caveat": "720p 可读性未单独截图。"
+    },
+    {
+      "id": "UI-002",
+      "type": "ui",
+      "name": "危险、交互与建造反馈",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/ui/hud.gd",
+        "scripts/ui/build_panel.gd",
+        "scripts/buildings/build_controller.gd"
+      ],
+      "evidence": "危险分级提示、前摇地面红圈+姿态、建造合法性原因文案、飘字反馈。",
+      "verification": "截图与冒烟断言。",
+      "caveat": ""
+    },
+    {
+      "id": "FLOW-001",
+      "type": "flow",
+      "name": "场景流程、暂停与输入锁",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/autoload/game.gd",
+        "scripts/main/game_session.gd",
+        "scripts/ui/main_menu.gd"
+      ],
+      "evidence": "Flow 状态机（菜单/游玩/暂停/死亡/胜利）；输入锁；信号连接集中管理。",
+      "verification": "冒烟测试流程切换。",
+      "caveat": ""
+    },
+    {
+      "id": "FLOW-002",
+      "type": "flow",
+      "name": "单槽版本化原子存档",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/autoload/game.gd",
+        "scripts/world/island.gd"
+      ],
+      "evidence": "单槽版本化 JSON；临时文件 + DirAccess.rename 原子替换；坏档不覆盖原存档。",
+      "verification": "冒烟测试：保存→读档后建筑与主线一致。",
+      "caveat": ""
+    },
+    {
+      "id": "FLOW-003",
+      "type": "flow",
+      "name": "火台胜利与自由游玩",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/autoload/game.gd",
+        "scripts/buildings/building.gd",
+        "scripts/ui/victory_panel.gd",
+        "scripts/ui/pause_panel.gd"
+      ],
+      "evidence": "点火→胜利结算→继续自由游玩/新游戏。",
+      "verification": "冒烟测试：点火触发胜利。",
+      "caveat": ""
+    },
+    {
+      "id": "SCENE-001",
+      "type": "scene",
+      "name": "场景、组件与数据资源边界",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/main/game_session.gd"
+      ],
+      "evidence": "scenes/ 只放主场景装配；逻辑在 scripts/；配置为 const 数据表；组件以 RefCounted 组合。",
+      "verification": "冒烟测试可跑通即证装配正确。",
+      "caveat": "配置目前是 GDScript const 表而非 .tres 资源，与 GDD 11.2「数据驱动」精神一致但载体不同。"
+    },
+    {
+      "id": "SCENE-002",
+      "type": "scene",
+      "name": "原创低多边形美术与资源预算",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/world/low_poly_mesh.gd"
+      ],
+      "evidence": "全部模型程序化生成（SurfaceTool/ArrayMesh），无外部美术资源，纹理预算远低于 64 MB。",
+      "verification": "截图确认低多边形风格与区域色板。",
+      "caveat": "仅程序化占位美术，非最终美术资产。"
+    },
+    {
+      "id": "SIG-001",
+      "type": "signal",
+      "name": "信号清单与界面通信",
+      "confirmed": false,
+      "decision": "pending-human-signoff",
+      "implementation": "implemented",
+      "files": [
+        "scripts/autoload/game.gd",
+        "scripts/player/inventory.gd",
+        "scripts/ui/hud.gd"
+      ],
+      "evidence": "Game 广播 toast/flow/save 信号；HUD 通过信号请求，不直接改世界状态。",
+      "verification": "冒烟测试运行期间无信号连接报错。",
+      "caveat": ""
+    }
+  ]
+}
